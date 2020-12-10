@@ -37,7 +37,8 @@ public class Login extends HttpServlet {
 			response.sendRedirect("login");
 		} else {
 			request.getSession().setAttribute("usuario", u);
-			request.getRequestDispatcher("principal").forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/admin/index");
+			// request.getRequestDispatcher("principal").forward(request, response);
 		}
 	}
 
