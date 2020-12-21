@@ -3,16 +3,16 @@ package julenmartin.pojo;
 public class Usuario {
 	String email;
 	String pass;
-	int id;
+	Long id;
 
 	public Usuario() {
 		super();
 		this.email = "";
-		this.id = 0;
+		this.id = 0L;
 		this.pass = "";
 	}
 
-	public Usuario(String email, String pass, int id) {
+	public Usuario(String email, String pass, long id) {
 		this.email = email;
 		this.pass = pass;
 		this.id = id;
@@ -34,11 +34,11 @@ public class Usuario {
 		this.pass = pass;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -47,7 +47,7 @@ public class Usuario {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + id;
+		result = (int) (prime * result + id);
 		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
 		return result;
 	}
